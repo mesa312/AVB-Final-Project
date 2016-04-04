@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class MainForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -26,12 +26,12 @@ Partial Class Form1
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CloseToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.lblAvailableIngredients = New System.Windows.Forms.Label()
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.btnViewAllRecipes = New System.Windows.Forms.Button()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.HelpToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CloseToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
@@ -43,6 +43,9 @@ Partial Class Form1
         Me.RadioButton8 = New System.Windows.Forms.RadioButton()
         Me.RadioButton9 = New System.Windows.Forms.RadioButton()
         Me.RadioButton10 = New System.Windows.Forms.RadioButton()
+        Me.lblDate = New System.Windows.Forms.Label()
+        Me.btnSelect = New System.Windows.Forms.Button()
+        Me.lstRecipes = New System.Windows.Forms.ListBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -66,8 +69,20 @@ Partial Class Form1
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(101, 22)
         Me.CloseToolStripMenuItem.Text = "close"
+        '
+        'HelpToolStripMenuItem
+        '
+        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
+        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(42, 20)
+        Me.HelpToolStripMenuItem.Text = "help"
+        '
+        'CloseToolStripMenuItem1
+        '
+        Me.CloseToolStripMenuItem1.Name = "CloseToolStripMenuItem1"
+        Me.CloseToolStripMenuItem1.Size = New System.Drawing.Size(46, 20)
+        Me.CloseToolStripMenuItem1.Text = "close"
         '
         'lblAvailableIngredients
         '
@@ -89,9 +104,9 @@ Partial Class Form1
         '
         'btnViewAllRecipes
         '
-        Me.btnViewAllRecipes.Location = New System.Drawing.Point(368, 290)
+        Me.btnViewAllRecipes.Location = New System.Drawing.Point(421, 290)
         Me.btnViewAllRecipes.Name = "btnViewAllRecipes"
-        Me.btnViewAllRecipes.Size = New System.Drawing.Size(113, 23)
+        Me.btnViewAllRecipes.Size = New System.Drawing.Size(101, 23)
         Me.btnViewAllRecipes.TabIndex = 9
         Me.btnViewAllRecipes.Text = "View All Recipes"
         Me.btnViewAllRecipes.UseVisualStyleBackColor = True
@@ -99,22 +114,10 @@ Partial Class Form1
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(379, 90)
+        Me.ComboBox1.Location = New System.Drawing.Point(62, 329)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox1.TabIndex = 10
-        '
-        'HelpToolStripMenuItem
-        '
-        Me.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem"
-        Me.HelpToolStripMenuItem.Size = New System.Drawing.Size(42, 20)
-        Me.HelpToolStripMenuItem.Text = "help"
-        '
-        'CloseToolStripMenuItem1
-        '
-        Me.CloseToolStripMenuItem1.Name = "CloseToolStripMenuItem1"
-        Me.CloseToolStripMenuItem1.Size = New System.Drawing.Size(46, 20)
-        Me.CloseToolStripMenuItem1.Text = "close"
         '
         'ErrorProvider1
         '
@@ -230,11 +233,40 @@ Partial Class Form1
         Me.RadioButton10.Text = "RadioButton10"
         Me.RadioButton10.UseVisualStyleBackColor = True
         '
-        'Form1
+        'lblDate
+        '
+        Me.lblDate.AutoSize = True
+        Me.lblDate.Location = New System.Drawing.Point(376, 35)
+        Me.lblDate.Name = "lblDate"
+        Me.lblDate.Size = New System.Drawing.Size(36, 13)
+        Me.lblDate.TabIndex = 21
+        Me.lblDate.Text = "(Date)"
+        '
+        'btnSelect
+        '
+        Me.btnSelect.Location = New System.Drawing.Point(308, 290)
+        Me.btnSelect.Name = "btnSelect"
+        Me.btnSelect.Size = New System.Drawing.Size(95, 23)
+        Me.btnSelect.TabIndex = 22
+        Me.btnSelect.Text = "Select"
+        Me.btnSelect.UseVisualStyleBackColor = True
+        '
+        'lstRecipes
+        '
+        Me.lstRecipes.FormattingEnabled = True
+        Me.lstRecipes.Location = New System.Drawing.Point(308, 86)
+        Me.lstRecipes.Name = "lstRecipes"
+        Me.lstRecipes.Size = New System.Drawing.Size(214, 186)
+        Me.lstRecipes.TabIndex = 23
+        '
+        'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(553, 386)
+        Me.Controls.Add(Me.lstRecipes)
+        Me.Controls.Add(Me.btnSelect)
+        Me.Controls.Add(Me.lblDate)
         Me.Controls.Add(Me.RadioButton10)
         Me.Controls.Add(Me.RadioButton9)
         Me.Controls.Add(Me.RadioButton8)
@@ -251,8 +283,8 @@ Partial Class Form1
         Me.Controls.Add(Me.lblAvailableIngredients)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Name = "MainForm"
+        Me.Text = "MainForn"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -280,4 +312,7 @@ Partial Class Form1
     Friend WithEvents RadioButton3 As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
+    Friend WithEvents lblDate As Label
+    Friend WithEvents lstRecipes As ListBox
+    Friend WithEvents btnSelect As Button
 End Class
