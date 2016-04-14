@@ -22,19 +22,9 @@ Partial Class OptionsForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnSelect = New System.Windows.Forms.Button()
         Me.btnEdit = New System.Windows.Forms.Button()
         Me.lstRecipes = New System.Windows.Forms.ListBox()
         Me.SuspendLayout()
-        '
-        'btnSelect
-        '
-        Me.btnSelect.Location = New System.Drawing.Point(226, 381)
-        Me.btnSelect.Name = "btnSelect"
-        Me.btnSelect.Size = New System.Drawing.Size(75, 23)
-        Me.btnSelect.TabIndex = 0
-        Me.btnSelect.Text = "Select"
-        Me.btnSelect.UseVisualStyleBackColor = True
         '
         'btnEdit
         '
@@ -60,14 +50,11 @@ Partial Class OptionsForm
         Me.ClientSize = New System.Drawing.Size(702, 438)
         Me.Controls.Add(Me.lstRecipes)
         Me.Controls.Add(Me.btnEdit)
-        Me.Controls.Add(Me.btnSelect)
         Me.Name = "OptionsForm"
         Me.Text = "Food Options"
         Me.ResumeLayout(False)
 
     End Sub
-
-    Friend WithEvents btnSelect As Button
     Friend WithEvents btnEdit As Button
     Friend WithEvents lstRecipes As ListBox
 End Class
