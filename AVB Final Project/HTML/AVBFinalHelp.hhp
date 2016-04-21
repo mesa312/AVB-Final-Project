@@ -1,0 +1,17 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=..\AVBFinalHelp.chm
+Contents file=Table of Contents.hhc
+Default topic=Purpose.html
+Display compile progress=No
+Index file=Index.hhk
+Language=0x409 English (United States)
+Title=PorposePage 
+
+
+[FILES]
+Purpose.html
+MidnightMunchies.html
+
+[INFOTYPES]
+
