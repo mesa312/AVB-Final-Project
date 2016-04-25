@@ -45,18 +45,6 @@
 
     End Sub
 
-
-
-
-
-
-
-
-
-
-
-
-
     Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
         Me.Close()
     End Sub
@@ -65,5 +53,7 @@
         Me.Close()
     End Sub
 
-
+    Private Sub AllRestaurantsForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        dgvRestaurants.DataSource = mRestaurants.Items()
+    End Sub
 End Class

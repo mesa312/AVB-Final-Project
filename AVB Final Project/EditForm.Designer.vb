@@ -88,6 +88,7 @@ Partial Class EditForm
         '
         'txtId
         '
+        Me.txtId.Enabled = False
         Me.txtId.Location = New System.Drawing.Point(112, 70)
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(179, 20)

@@ -944,31 +944,18 @@ Namespace RestaurantsDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DriveThru", Global.System.Data.SqlDbType.NVarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "DriveThru", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Restaurants] SET [Id] = @Id, [FoodType] = @FoodType, [Business] = @"& _ 
-                "Business, [Address] = @Address, [Hours] = @Hours, [Phone] = @Phone, [DriveThru] "& _ 
-                "= @DriveThru WHERE (([Id] = @Original_Id) AND ([FoodType] = @Original_FoodType) "& _ 
-                "AND ([Business] = @Original_Business) AND ([Address] = @Original_Address) AND (["& _ 
-                "Hours] = @Original_Hours) AND ((@IsNull_Phone = 1 AND [Phone] IS NULL) OR ([Phon"& _ 
-                "e] = @Original_Phone)) AND ((@IsNull_DriveThru = 1 AND [DriveThru] IS NULL) OR ("& _ 
-                "[DriveThru] = @Original_DriveThru)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, FoodType, Business, Address, H"& _ 
-                "ours, Phone, DriveThru FROM Restaurants WHERE (Id = @Id)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE       Restaurants"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SET                FoodType = @FoodType, Business = @Bu"& _ 
+                "siness, Address = @Address, Hours = @Hours, Phone = @Phone, DriveThru = @DriveTh"& _ 
+                "ru"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Id = @Id);  "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, FoodType, Business, Address, Hours, P"& _ 
+                "hone, DriveThru FROM Restaurants WHERE (Id = @Id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FoodType", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FoodType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Business", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Business", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Address", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Address", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Hours", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hours", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Phone", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DriveThru", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DriveThru", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_FoodType", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "FoodType", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Business", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Business", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Address", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Address", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Hours", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Hours", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_Phone", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Phone", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_DriveThru", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DriveThru", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DriveThru", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DriveThru", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@FoodType", Global.System.Data.SqlDbType.NVarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "FoodType", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Business", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "Business", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Address", Global.System.Data.SqlDbType.NVarChar, 100, Global.System.Data.ParameterDirection.Input, 0, 0, "Address", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Hours", Global.System.Data.SqlDbType.NVarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "Hours", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Phone", Global.System.Data.SqlDbType.NVarChar, 30, Global.System.Data.ParameterDirection.Input, 0, 0, "Phone", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DriveThru", Global.System.Data.SqlDbType.NVarChar, 10, Global.System.Data.ParameterDirection.Input, 0, 0, "DriveThru", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1141,73 +1128,38 @@ Namespace RestaurantsDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Id As Integer, ByVal FoodType As String, ByVal Business As String, ByVal Address As String, ByVal Hours As String, ByVal Phone As String, ByVal DriveThru As String, ByVal Original_Id As Integer, ByVal Original_FoodType As String, ByVal Original_Business As String, ByVal Original_Address As String, ByVal Original_Hours As String, ByVal Original_Phone As String, ByVal Original_DriveThru As String) As Integer
-            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Id,Integer)
+        Public Overloads Overridable Function Update(ByVal FoodType As String, ByVal Business As String, ByVal Address As String, ByVal Hours As String, ByVal Phone As String, ByVal DriveThru As String, ByVal Id As Integer) As Integer
             If (FoodType Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("FoodType")
             Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(FoodType,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(FoodType,String)
             End If
             If (Business Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Business")
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Business,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Business,String)
             End If
             If (Address Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Address")
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Address,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Address,String)
             End If
             If (Hours Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Hours")
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Hours,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Hours,String)
             End If
             If (Phone Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Phone,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Phone,String)
             End If
             If (DriveThru Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(DriveThru,String)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(DriveThru,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_Id,Integer)
-            If (Original_FoodType Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_FoodType")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_FoodType,String)
-            End If
-            If (Original_Business Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Business")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Business,String)
-            End If
-            If (Original_Address Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Address")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Address,String)
-            End If
-            If (Original_Hours Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("Original_Hours")
-            Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Hours,String)
-            End If
-            If (Original_Phone Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Phone,String)
-            End If
-            If (Original_DriveThru Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_DriveThru,String)
-            End If
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Id,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1221,14 +1173,6 @@ Namespace RestaurantsDataSetTableAdapters
                     Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal FoodType As String, ByVal Business As String, ByVal Address As String, ByVal Hours As String, ByVal Phone As String, ByVal DriveThru As String, ByVal Original_Id As Integer, ByVal Original_FoodType As String, ByVal Original_Business As String, ByVal Original_Address As String, ByVal Original_Hours As String, ByVal Original_Phone As String, ByVal Original_DriveThru As String) As Integer
-            Return Me.Update(Original_Id, FoodType, Business, Address, Hours, Phone, DriveThru, Original_Id, Original_FoodType, Original_Business, Original_Address, Original_Hours, Original_Phone, Original_DriveThru)
         End Function
     End Class
     
