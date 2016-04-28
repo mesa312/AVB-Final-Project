@@ -31,9 +31,17 @@ Partial Class AllRestaurantsForm
         Me.NewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.dgvRestaurants = New System.Windows.Forms.DataGridView()
+        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FoodTypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BusinessDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HoursDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PhoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DriveThruDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RestaurantsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.RestaurantsDataSet = New AVB_Final_Project.RestaurantsDataSet()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.btnAdd = New System.Windows.Forms.Button()
-        Me.lblStatus = New System.Windows.Forms.StatusStrip()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -49,15 +57,6 @@ Partial Class AllRestaurantsForm
         Me.txtPhone = New System.Windows.Forms.TextBox()
         Me.txtDriveThru = New System.Windows.Forms.TextBox()
         Me.btnDelete = New System.Windows.Forms.Button()
-        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FoodTypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BusinessDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HoursDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PhoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DriveThruDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RestaurantsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.RestaurantsDataSet = New AVB_Final_Project.RestaurantsDataSet()
         Me.RestaurantsTableAdapter = New AVB_Final_Project.RestaurantsDataSetTableAdapters.RestaurantsTableAdapter()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -95,7 +94,7 @@ Partial Class AllRestaurantsForm
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
         Me.CloseToolStripMenuItem.Text = "&Close"
         '
         'RestaurantsToolStripMenuItem
@@ -108,13 +107,14 @@ Partial Class AllRestaurantsForm
         'NewToolStripMenuItem
         '
         Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(106, 22)
-        Me.NewToolStripMenuItem.Text = "new"
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NewToolStripMenuItem.Text = "&Edit"
         '
         'DeleteToolStripMenuItem
         '
+        Me.DeleteToolStripMenuItem.Enabled = False
         Me.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem"
-        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(106, 22)
+        Me.DeleteToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.DeleteToolStripMenuItem.Text = "delete"
         '
         'dgvRestaurants
@@ -128,9 +128,63 @@ Partial Class AllRestaurantsForm
         Me.dgvRestaurants.Size = New System.Drawing.Size(1012, 275)
         Me.dgvRestaurants.TabIndex = 4
         '
+        'IdDataGridViewTextBoxColumn
+        '
+        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
+        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
+        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
+        '
+        'FoodTypeDataGridViewTextBoxColumn
+        '
+        Me.FoodTypeDataGridViewTextBoxColumn.DataPropertyName = "FoodType"
+        Me.FoodTypeDataGridViewTextBoxColumn.HeaderText = "FoodType"
+        Me.FoodTypeDataGridViewTextBoxColumn.Name = "FoodTypeDataGridViewTextBoxColumn"
+        '
+        'BusinessDataGridViewTextBoxColumn
+        '
+        Me.BusinessDataGridViewTextBoxColumn.DataPropertyName = "Business"
+        Me.BusinessDataGridViewTextBoxColumn.HeaderText = "Business"
+        Me.BusinessDataGridViewTextBoxColumn.Name = "BusinessDataGridViewTextBoxColumn"
+        Me.BusinessDataGridViewTextBoxColumn.Width = 200
+        '
+        'AddressDataGridViewTextBoxColumn
+        '
+        Me.AddressDataGridViewTextBoxColumn.DataPropertyName = "Address"
+        Me.AddressDataGridViewTextBoxColumn.HeaderText = "Address"
+        Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
+        Me.AddressDataGridViewTextBoxColumn.Width = 300
+        '
+        'HoursDataGridViewTextBoxColumn
+        '
+        Me.HoursDataGridViewTextBoxColumn.DataPropertyName = "Hours"
+        Me.HoursDataGridViewTextBoxColumn.HeaderText = "Hours"
+        Me.HoursDataGridViewTextBoxColumn.Name = "HoursDataGridViewTextBoxColumn"
+        '
+        'PhoneDataGridViewTextBoxColumn
+        '
+        Me.PhoneDataGridViewTextBoxColumn.DataPropertyName = "Phone"
+        Me.PhoneDataGridViewTextBoxColumn.HeaderText = "Phone"
+        Me.PhoneDataGridViewTextBoxColumn.Name = "PhoneDataGridViewTextBoxColumn"
+        '
+        'DriveThruDataGridViewTextBoxColumn
+        '
+        Me.DriveThruDataGridViewTextBoxColumn.DataPropertyName = "DriveThru"
+        Me.DriveThruDataGridViewTextBoxColumn.HeaderText = "DriveThru"
+        Me.DriveThruDataGridViewTextBoxColumn.Name = "DriveThruDataGridViewTextBoxColumn"
+        '
+        'RestaurantsBindingSource
+        '
+        Me.RestaurantsBindingSource.DataMember = "Restaurants"
+        Me.RestaurantsBindingSource.DataSource = Me.RestaurantsDataSet
+        '
+        'RestaurantsDataSet
+        '
+        Me.RestaurantsDataSet.DataSetName = "RestaurantsDataSet"
+        Me.RestaurantsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(929, 487)
+        Me.btnClose.Location = New System.Drawing.Point(930, 502)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(75, 23)
         Me.btnClose.TabIndex = 5
@@ -145,14 +199,6 @@ Partial Class AllRestaurantsForm
         Me.btnAdd.TabIndex = 6
         Me.btnAdd.Text = "Add"
         Me.btnAdd.UseVisualStyleBackColor = True
-        '
-        'lblStatus
-        '
-        Me.lblStatus.Location = New System.Drawing.Point(0, 530)
-        Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(1056, 22)
-        Me.lblStatus.TabIndex = 7
-        Me.lblStatus.Text = "StatusStrip1"
         '
         'Label1
         '
@@ -275,60 +321,6 @@ Partial Class AllRestaurantsForm
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = True
         '
-        'IdDataGridViewTextBoxColumn
-        '
-        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
-        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
-        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
-        '
-        'FoodTypeDataGridViewTextBoxColumn
-        '
-        Me.FoodTypeDataGridViewTextBoxColumn.DataPropertyName = "FoodType"
-        Me.FoodTypeDataGridViewTextBoxColumn.HeaderText = "FoodType"
-        Me.FoodTypeDataGridViewTextBoxColumn.Name = "FoodTypeDataGridViewTextBoxColumn"
-        '
-        'BusinessDataGridViewTextBoxColumn
-        '
-        Me.BusinessDataGridViewTextBoxColumn.DataPropertyName = "Business"
-        Me.BusinessDataGridViewTextBoxColumn.HeaderText = "Business"
-        Me.BusinessDataGridViewTextBoxColumn.Name = "BusinessDataGridViewTextBoxColumn"
-        Me.BusinessDataGridViewTextBoxColumn.Width = 200
-        '
-        'AddressDataGridViewTextBoxColumn
-        '
-        Me.AddressDataGridViewTextBoxColumn.DataPropertyName = "Address"
-        Me.AddressDataGridViewTextBoxColumn.HeaderText = "Address"
-        Me.AddressDataGridViewTextBoxColumn.Name = "AddressDataGridViewTextBoxColumn"
-        Me.AddressDataGridViewTextBoxColumn.Width = 300
-        '
-        'HoursDataGridViewTextBoxColumn
-        '
-        Me.HoursDataGridViewTextBoxColumn.DataPropertyName = "Hours"
-        Me.HoursDataGridViewTextBoxColumn.HeaderText = "Hours"
-        Me.HoursDataGridViewTextBoxColumn.Name = "HoursDataGridViewTextBoxColumn"
-        '
-        'PhoneDataGridViewTextBoxColumn
-        '
-        Me.PhoneDataGridViewTextBoxColumn.DataPropertyName = "Phone"
-        Me.PhoneDataGridViewTextBoxColumn.HeaderText = "Phone"
-        Me.PhoneDataGridViewTextBoxColumn.Name = "PhoneDataGridViewTextBoxColumn"
-        '
-        'DriveThruDataGridViewTextBoxColumn
-        '
-        Me.DriveThruDataGridViewTextBoxColumn.DataPropertyName = "DriveThru"
-        Me.DriveThruDataGridViewTextBoxColumn.HeaderText = "DriveThru"
-        Me.DriveThruDataGridViewTextBoxColumn.Name = "DriveThruDataGridViewTextBoxColumn"
-        '
-        'RestaurantsBindingSource
-        '
-        Me.RestaurantsBindingSource.DataMember = "Restaurants"
-        Me.RestaurantsBindingSource.DataSource = Me.RestaurantsDataSet
-        '
-        'RestaurantsDataSet
-        '
-        Me.RestaurantsDataSet.DataSetName = "RestaurantsDataSet"
-        Me.RestaurantsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'RestaurantsTableAdapter
         '
         Me.RestaurantsTableAdapter.ClearBeforeFill = True
@@ -346,12 +338,12 @@ Partial Class AllRestaurantsForm
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(280, 64)
+        Me.Label9.Location = New System.Drawing.Point(226, 59)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(444, 13)
+        Me.Label9.Size = New System.Drawing.Size(565, 13)
         Me.Label9.TabIndex = 24
         Me.Label9.Text = "Type in the informations in the selected fields and then you may chose to Add, Ed" &
-    "it or Delete."
+    "it or Delete. Fields are case sensitive."
         '
         'AllRestaurantsForm
         '
@@ -375,7 +367,6 @@ Partial Class AllRestaurantsForm
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.lblStatus)
         Me.Controls.Add(Me.btnAdd)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.dgvRestaurants)
@@ -413,7 +404,6 @@ Partial Class AllRestaurantsForm
     Friend WithEvents NewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DeleteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btnAdd As Button
-    Friend WithEvents lblStatus As StatusStrip
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label

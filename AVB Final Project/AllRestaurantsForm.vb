@@ -13,7 +13,7 @@
 
     ''Fuction that adds restaurants to the data table
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
-        lblStatus.Text = ""
+
 
         If Not mRestaurants.Insert(CInt(txtId.Text), txtFoodType.Text, txtBusiness.Text, txtAddress.Text, txtPhone.Text, txtHours.Text, txtDriveThru.Text) Then
             MessageBox.Show("Cannot add Restaurant." & mRestaurants.LastStatus)
@@ -27,15 +27,17 @@
 
     'Fuction that deletes restaurants from the data table
     Private Sub btnDelete_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        lblStatus.Text = ""
+
         If mRestaurants.Delete(CInt(txtId.Text)) Then
+
+
             dgvRestaurants.DataSource = mRestaurants.Items
         End If
 
-        lblStatus.Text = mRestaurants.LastStatus
+        MessageBox.Show(mRestaurants.LastStatus)
     End Sub
 
-
+    'opperation that opens the edit form to edit information
     Private Sub btnEdit_Click(sender As Object, e As EventArgs) Handles btnEdit.Click
         Dim RestaurantId As Integer = CInt(txtId.Text)
 
@@ -55,5 +57,9 @@
 
     Private Sub AllRestaurantsForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         dgvRestaurants.DataSource = mRestaurants.Items()
+    End Sub
+
+    Private Sub NewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewToolStripMenuItem.Click
+        EditForm.ShowDialog()
     End Sub
 End Class
