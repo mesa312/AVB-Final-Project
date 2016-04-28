@@ -19,7 +19,7 @@
             MessageBox.Show("Cannot add Restaurant." & mRestaurants.LastStatus)
 
         Else
-            lblStatus.Text = "Restaurant added."
+            MessageBox.Show("Restaurant added." & mRestaurants.LastStatus)
             dgvRestaurants.DataSource = mRestaurants.Items
         End If
     End Sub

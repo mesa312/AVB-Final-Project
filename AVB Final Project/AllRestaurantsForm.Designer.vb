@@ -59,6 +59,8 @@ Partial Class AllRestaurantsForm
         Me.RestaurantsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RestaurantsDataSet = New AVB_Final_Project.RestaurantsDataSet()
         Me.RestaurantsTableAdapter = New AVB_Final_Project.RestaurantsDataSetTableAdapters.RestaurantsTableAdapter()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvRestaurants, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RestaurantsBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,7 +69,7 @@ Partial Class AllRestaurantsForm
         '
         'btnEdit
         '
-        Me.btnEdit.Location = New System.Drawing.Point(843, 72)
+        Me.btnEdit.Location = New System.Drawing.Point(885, 127)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(75, 23)
         Me.btnEdit.TabIndex = 1
@@ -87,21 +89,21 @@ Partial Class AllRestaurantsForm
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CloseToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(35, 20)
-        Me.FileToolStripMenuItem.Text = "file"
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
+        Me.FileToolStripMenuItem.Text = "&File"
         '
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(101, 22)
-        Me.CloseToolStripMenuItem.Text = "close"
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CloseToolStripMenuItem.Text = "&Close"
         '
         'RestaurantsToolStripMenuItem
         '
         Me.RestaurantsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewToolStripMenuItem, Me.DeleteToolStripMenuItem})
         Me.RestaurantsToolStripMenuItem.Name = "RestaurantsToolStripMenuItem"
         Me.RestaurantsToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
-        Me.RestaurantsToolStripMenuItem.Text = "Modify"
+        Me.RestaurantsToolStripMenuItem.Text = "&Modify"
         '
         'NewToolStripMenuItem
         '
@@ -121,14 +123,14 @@ Partial Class AllRestaurantsForm
         Me.dgvRestaurants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvRestaurants.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.FoodTypeDataGridViewTextBoxColumn, Me.BusinessDataGridViewTextBoxColumn, Me.AddressDataGridViewTextBoxColumn, Me.HoursDataGridViewTextBoxColumn, Me.PhoneDataGridViewTextBoxColumn, Me.DriveThruDataGridViewTextBoxColumn})
         Me.dgvRestaurants.DataSource = Me.RestaurantsBindingSource
-        Me.dgvRestaurants.Location = New System.Drawing.Point(12, 179)
+        Me.dgvRestaurants.Location = New System.Drawing.Point(12, 206)
         Me.dgvRestaurants.Name = "dgvRestaurants"
         Me.dgvRestaurants.Size = New System.Drawing.Size(1012, 275)
         Me.dgvRestaurants.TabIndex = 4
         '
         'btnClose
         '
-        Me.btnClose.Location = New System.Drawing.Point(871, 470)
+        Me.btnClose.Location = New System.Drawing.Point(929, 487)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(75, 23)
         Me.btnClose.TabIndex = 5
@@ -137,7 +139,7 @@ Partial Class AllRestaurantsForm
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(843, 39)
+        Me.btnAdd.Location = New System.Drawing.Point(885, 94)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(75, 23)
         Me.btnAdd.TabIndex = 6
@@ -155,7 +157,7 @@ Partial Class AllRestaurantsForm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(74, 39)
+        Me.Label1.Location = New System.Drawing.Point(116, 94)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(16, 13)
         Me.Label1.TabIndex = 8
@@ -164,7 +166,7 @@ Partial Class AllRestaurantsForm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(32, 72)
+        Me.Label2.Location = New System.Drawing.Point(74, 127)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(58, 13)
         Me.Label2.TabIndex = 9
@@ -173,7 +175,7 @@ Partial Class AllRestaurantsForm
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(41, 108)
+        Me.Label3.Location = New System.Drawing.Point(83, 163)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(49, 13)
         Me.Label3.TabIndex = 10
@@ -182,7 +184,7 @@ Partial Class AllRestaurantsForm
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(362, 39)
+        Me.Label4.Location = New System.Drawing.Point(404, 94)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(45, 13)
         Me.Label4.TabIndex = 11
@@ -191,7 +193,7 @@ Partial Class AllRestaurantsForm
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(372, 72)
+        Me.Label5.Location = New System.Drawing.Point(414, 127)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(35, 13)
         Me.Label5.TabIndex = 12
@@ -200,7 +202,7 @@ Partial Class AllRestaurantsForm
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(546, 72)
+        Me.Label6.Location = New System.Drawing.Point(588, 127)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(57, 13)
         Me.Label6.TabIndex = 13
@@ -209,7 +211,7 @@ Partial Class AllRestaurantsForm
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(372, 108)
+        Me.Label7.Location = New System.Drawing.Point(414, 163)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(38, 13)
         Me.Label7.TabIndex = 14
@@ -217,56 +219,56 @@ Partial Class AllRestaurantsForm
         '
         'txtId
         '
-        Me.txtId.Location = New System.Drawing.Point(96, 37)
+        Me.txtId.Location = New System.Drawing.Point(138, 92)
         Me.txtId.Name = "txtId"
         Me.txtId.Size = New System.Drawing.Size(179, 20)
         Me.txtId.TabIndex = 15
         '
         'txtFoodType
         '
-        Me.txtFoodType.Location = New System.Drawing.Point(96, 69)
+        Me.txtFoodType.Location = New System.Drawing.Point(138, 124)
         Me.txtFoodType.Name = "txtFoodType"
         Me.txtFoodType.Size = New System.Drawing.Size(179, 20)
         Me.txtFoodType.TabIndex = 16
         '
         'txtBusiness
         '
-        Me.txtBusiness.Location = New System.Drawing.Point(96, 105)
+        Me.txtBusiness.Location = New System.Drawing.Point(138, 160)
         Me.txtBusiness.Name = "txtBusiness"
         Me.txtBusiness.Size = New System.Drawing.Size(179, 20)
         Me.txtBusiness.TabIndex = 17
         '
         'txtAddress
         '
-        Me.txtAddress.Location = New System.Drawing.Point(417, 36)
+        Me.txtAddress.Location = New System.Drawing.Point(459, 91)
         Me.txtAddress.Name = "txtAddress"
         Me.txtAddress.Size = New System.Drawing.Size(364, 20)
         Me.txtAddress.TabIndex = 18
         '
         'txtHours
         '
-        Me.txtHours.Location = New System.Drawing.Point(417, 69)
+        Me.txtHours.Location = New System.Drawing.Point(459, 124)
         Me.txtHours.Name = "txtHours"
         Me.txtHours.Size = New System.Drawing.Size(100, 20)
         Me.txtHours.TabIndex = 19
         '
         'txtPhone
         '
-        Me.txtPhone.Location = New System.Drawing.Point(417, 105)
+        Me.txtPhone.Location = New System.Drawing.Point(459, 160)
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(100, 20)
         Me.txtPhone.TabIndex = 20
         '
         'txtDriveThru
         '
-        Me.txtDriveThru.Location = New System.Drawing.Point(609, 69)
+        Me.txtDriveThru.Location = New System.Drawing.Point(651, 124)
         Me.txtDriveThru.Name = "txtDriveThru"
         Me.txtDriveThru.Size = New System.Drawing.Size(100, 20)
         Me.txtDriveThru.TabIndex = 21
         '
         'btnDelete
         '
-        Me.btnDelete.Location = New System.Drawing.Point(843, 108)
+        Me.btnDelete.Location = New System.Drawing.Point(885, 163)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(75, 23)
         Me.btnDelete.TabIndex = 22
@@ -331,11 +333,33 @@ Partial Class AllRestaurantsForm
         '
         Me.RestaurantsTableAdapter.ClearBeforeFill = True
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(367, 24)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(252, 25)
+        Me.Label8.TabIndex = 23
+        Me.Label8.Text = "All Restaurants Available"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(280, 64)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(444, 13)
+        Me.Label9.TabIndex = 24
+        Me.Label9.Text = "Type in the informations in the selected fields and then you may chose to Add, Ed" &
+    "it or Delete."
+        '
         'AllRestaurantsForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1056, 552)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.txtDriveThru)
         Me.Controls.Add(Me.txtPhone)
@@ -405,4 +429,6 @@ Partial Class AllRestaurantsForm
     Friend WithEvents txtPhone As TextBox
     Friend WithEvents txtDriveThru As TextBox
     Friend WithEvents btnDelete As Button
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
 End Class
